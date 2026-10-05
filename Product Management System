@@ -1,0 +1,47 @@
+class Product {
+
+    private int productId;
+    private String productName;
+    private double price;
+    private int quantity;
+
+    public Product(int productId, String productName, double price, int quantity) {
+
+        if (price < 0) {
+            price = 0;
+        }
+
+        if (quantity < 0) {
+            quantity = 0;
+        }
+
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+ 
+    public void displayProduct() {
+        System.out.println("Product ID: " + productId);
+        System.out.println("Product Name: " + productName);
+        System.out.println("Price: $" + price);
+        System.out.println("Quantity: " + quantity);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Product product1 = new Product(101, "Laptop", 500.0, 5);
+        Product product2 = new Product(102, "Phone", 300.0, 10);
+        Product product3 = new Product(103, "Headphones", 50.0, 15);
+        Product product4 = new Product(104, "Keyboard", 25.0, 20);
+
+        product1.displayProduct();
+        product2.displayProduct();
+        product3.displayProduct();
+        product4.displayProduct();
+    }
+}
